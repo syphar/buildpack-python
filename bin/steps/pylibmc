@@ -10,7 +10,12 @@
 # This script is invoked by [`bin/compile`](/).
 
 # The location of the pre-compiled libmemcached binary.
-VENDORED_MEMCACHED="http://cl.ly/0a191R3K160t1w1P0N25/vendor-libmemcached.tar.gz"
+
+if [ "$PAAS_VENDOR" = "cloudControl" ]; then
+    VENDORED_MEMCACHED="http://$DOMAIN.packages.s3.amazonaws.com/vendor-libmemcached.tar.gz"
+else
+    VENDORED_MEMCACHED="http://cl.ly/0a191R3K160t1w1P0N25/vendor-libmemcached.tar.gz"
+fi
 
 # If pylibmc exists within requirements, use vendored libmemcached.
 if (grep -Fiq "pylibmc" requirements.txt) then
@@ -21,6 +26,7 @@ if (grep -Fiq "pylibmc" requirements.txt) then
     export LIBMEMCACHED=$(pwd)/vendor
   else
     # Download and extract libmemcached into target vendor directory.
+    echo "-----> downloading from $VENDORED_MEMCACHED"
     curl -s -L -o tmp-libmemcached.tar.gz $VENDORED_MEMCACHED
     tar -zxvf tmp-libmemcached.tar.gz > /dev/null
     rm tmp-libmemcached.tar.gz
