@@ -26,7 +26,6 @@ if (grep -Fiq "pylibmc" requirements.txt) then
     export LIBMEMCACHED=$(pwd)/vendor
   else
     # Download and extract libmemcached into target vendor directory.
-    echo "-----> downloading from $VENDORED_MEMCACHED"
     curl -s -L -o tmp-libmemcached.tar.gz $VENDORED_MEMCACHED
     tar -zxvf tmp-libmemcached.tar.gz > /dev/null
     rm tmp-libmemcached.tar.gz
