@@ -63,7 +63,7 @@ export LD_LIBRARY_PATH=/app/.heroku/vendor/lib
 cd $BUILD_DIR
 
 # Experimental pre_compile hook.
-source $BIN_DIR/steps/hooks/pre_compile
+#source $BIN_DIR/steps/hooks/pre_compile
 
 # If no requirements given, assume `setup.py develop`.
 if [ ! -f requirements.txt ]; then
@@ -179,7 +179,7 @@ set-default-env PYTHONPATH /app/
 
 
 # Experimental post_compile hook.
-source $BIN_DIR/steps/hooks/post_compile
+#source $BIN_DIR/steps/hooks/post_compile
 
 # ### Fin.
 
