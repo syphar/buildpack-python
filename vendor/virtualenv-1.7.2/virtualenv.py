@@ -490,7 +490,7 @@ def _install_req(py_executable, unzip=False, distribute=False,
         source = None
     else:
         setup_fn = None
-        source = 'distribute-0.6.27.tar.gz'
+        source = 'distribute-0.6.34.tar.gz'
         project_name = 'distribute'
         bootstrap_script = DISTRIBUTE_SETUP_PY
 

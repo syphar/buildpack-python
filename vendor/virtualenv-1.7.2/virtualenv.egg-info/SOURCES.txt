@@ -38,7 +38,7 @@ virtualenv_embedded/ez_setup.py
 virtualenv_embedded/site.py
 virtualenv_support/__init__.py
 virtualenv_support/distribute-0.6.27.tar.gz
-virtualenv_support/pip-1.1.tar.gz
+virtualenv_support/pip-1.2.1.tar.gz
 virtualenv_support/setuptools-0.6c11-py2.4.egg
 virtualenv_support/setuptools-0.6c11-py2.5.egg
 virtualenv_support/setuptools-0.6c11-py2.6.egg
