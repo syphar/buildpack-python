@@ -199,7 +199,7 @@ source $BIN_DIR/steps/pylibmc
 puts-step "Activating virtualenv"
 source $VIRTUALENV_LOC/bin/activate
 
-pip install --upgrade distribute==0.6.34
+pip install --upgrade distribute==0.6.34 &> /dev/null || true
 # Install Mercurial if it appears to be required.
 if (grep -Fiq "hg+" requirements.txt) then
   pip install --use-mirrors mercurial | indent
